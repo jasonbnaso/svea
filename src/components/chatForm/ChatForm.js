@@ -9,7 +9,6 @@ const ChatForm = ({ onFormSubmit }) => {
       className="chat-form"
       onSubmit={(event) => {
         event.preventDefault();
-        // disable btn or move ifsats here
         onFormSubmit(userInput);
         setUserInput("");
       }}

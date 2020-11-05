@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import ChatForm from "../chatForm/ChatForm.js";
 import MessageBox from "../messageBox/MessageBox.js";
 
-const Messages = () => {
+const Chat = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -45,14 +45,10 @@ const Messages = () => {
 
   return (
     <>
-      <div className="message-box">
-        <MessageBox messages={messages} />
-      </div>
+      <MessageBox messages={messages} />
       <ChatForm onFormSubmit={onFormSubmit} />
     </>
   );
 };
 
-export default Messages;
-
-// split Chatform and form sep css
+export default Chat;
