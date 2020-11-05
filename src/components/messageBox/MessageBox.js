@@ -1,5 +1,5 @@
 import React from "react";
-import user from "../../imgs/user.png";
+import user from "../../imgs/user.jpg";
 import "./messageBox.scss";
 
 const MessageBox = ({ messages }) => {
