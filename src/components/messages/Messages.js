@@ -54,7 +54,7 @@ const Messages = () => {
         <ul>
           {messages.map((message) => (
             <li
-              className={message.isMine ? "message" : "message my-message"}
+              className={message.isMine ? "message my-message" : "message"}
               key={message.id}
             >
               <div className="img-text">

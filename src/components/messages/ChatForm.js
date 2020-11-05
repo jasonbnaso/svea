@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const ChatForm = ({ onFormSubmit }) => {
   const [userInput, setUserInput] = useState("");
-  
+
   return (
     <form
       className="chat-form"
@@ -15,8 +15,7 @@ const ChatForm = ({ onFormSubmit }) => {
         value={userInput}
         onChange={(event) => setUserInput(event.target.value)}
       />
-      <input type="submit" />
-      Send
+      <input className="send-btn" type="submit" value="SEND"/>
     </form>
   );
 };

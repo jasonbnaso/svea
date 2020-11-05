@@ -1,13 +1,19 @@
 .message-box {
   width: 70%;
-  padding: 15px;
+  padding: 20px;
   margin: 5px 0 22px 0;
   border: none;
+  border-radius: 25px;
   background: #e6e6e6;
   resize: none;
   min-height: 200px;
+  @media (min-width: 768px) {
+    width: 40%;
+  }
   ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
   .message {
     color: #282c34;
@@ -17,13 +23,16 @@
     justify-content: space-between;
     border: 2px solid #dedede;
     background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
+    border-radius: 36px;
+    padding: 2px;
+    margin: 6px 0;
     .img-text {
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+    p {
+      text-align: left;
     }
   }
   .message.my-message {
@@ -44,5 +53,37 @@
     color: grey;
     font-size: 12px;
     padding: 0 5px;
+  }
+  input {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+}
+.chat-form {
+  .search-field {
+    border-radius: 25px;
+    padding: 20px;
+    width: 200px;
+    height: 15px;
+    &:focus {
+      outline: 0;
+    }
+  }
+  .send-btn {
+    background-color: transparent;
+    border-radius: 50%;
+    color: white;
+    padding: 24px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
   }
 }
