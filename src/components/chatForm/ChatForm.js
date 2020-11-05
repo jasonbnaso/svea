@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./chatForm.scss";
 
 const ChatForm = ({ onFormSubmit }) => {
   const [userInput, setUserInput] = useState("");
@@ -6,7 +7,12 @@ const ChatForm = ({ onFormSubmit }) => {
   return (
     <form
       className="chat-form"
-      onSubmit={(event) => onFormSubmit(event, userInput, setUserInput(""))}
+      onSubmit={(event) => {
+        event.preventDefault();
+        // disable btn or move ifsats here
+        onFormSubmit(userInput);
+        setUserInput("");
+      }}
     >
       <input
         id="searchField"
@@ -15,7 +21,7 @@ const ChatForm = ({ onFormSubmit }) => {
         value={userInput}
         onChange={(event) => setUserInput(event.target.value)}
       />
-      <input className="send-btn" type="submit" value="SEND"/>
+      <input className="send-btn" type="submit" value="SEND" />
     </form>
   );
 };

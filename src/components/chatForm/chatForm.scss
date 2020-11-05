@@ -1,0 +1,23 @@
+.chat-form {
+  .search-field {
+    border-radius: 25px;
+    padding: 20px;
+    width: 200px;
+    height: 15px;
+    &:focus {
+      outline: 0;
+    }
+  }
+  .send-btn {
+    background-color: transparent;
+    border-radius: 50%;
+    color: white;
+    padding: 24px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+  }
+}

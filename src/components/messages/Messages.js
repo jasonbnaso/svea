@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import * as api from "../../api/jsonPlaceholder.js";
 import { v4 as uuidv4 } from "uuid";
-import user from "../../imgs/user.png";
-import ChatForm from "./ChatForm.js";
-import "./messages.scss";
+import ChatForm from "../chatForm/ChatForm.js";
+import MessageBox from "../messageBox/MessageBox.js";
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
@@ -12,7 +11,6 @@ const Messages = () => {
     const fetchData = async () => {
       try {
         const response = await api.getMessages();
-        // setMessages(response.data);
         setMessages(
           response.data.map((message) => {
             return {
@@ -30,8 +28,7 @@ const Messages = () => {
     fetchData();
   }, []);
 
-  const onFormSubmit = (event, userInput) => {
-    event.preventDefault();
+  const onFormSubmit = (userInput) => {
     if (userInput) {
       const userId = uuidv4();
       setMessages([
@@ -43,28 +40,13 @@ const Messages = () => {
           isMine: true,
         },
       ]);
-    } else {
-      return;
     }
   };
 
   return (
     <>
       <div className="message-box">
-        <ul>
-          {messages.map((message) => (
-            <li
-              className={message.isMine ? "message my-message" : "message"}
-              key={message.id}
-            >
-              <div className="img-text">
-                <img src={user} className="user-image" alt="dude"></img>
-                <p>{message.text}</p>
-              </div>
-              <div className="time">{message.timestamp}</div>
-            </li>
-          ))}
-        </ul>
+        <MessageBox messages={messages} />
       </div>
       <ChatForm onFormSubmit={onFormSubmit} />
     </>
@@ -73,5 +55,4 @@ const Messages = () => {
 
 export default Messages;
 
-// Look into
-// https://deepscan.io/docs/rules/react-void-element-with-children
+// split Chatform and form sep css
