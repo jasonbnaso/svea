@@ -4,9 +4,9 @@ import "../App.scss";
 
 function App() {
   return (
-    <div className="chat-wrapper">
+    <main className="wrapper">
       <Chat />
-    </div>
+    </main>
   );
 }
 

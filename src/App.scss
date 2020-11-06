@@ -1,11 +1,12 @@
-.chat-wrapper {
-  text-align: center;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.wrapper {
   background-color: #000019;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 1vmin);
-  color: white;
 }

@@ -11,7 +11,7 @@ const MessageBox = ({ messages }) => {
             className={message.isMine ? "message my-message" : "message"}
             key={message.id}
           >
-            <div className="img-text">
+            <div className="img-text-wrapper">
               <img src={user} className="user-image" alt="Profile" />
               <p>{message.text}</p>
             </div>

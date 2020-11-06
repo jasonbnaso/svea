@@ -1,21 +1,21 @@
 .chat-form {
+  margin: 8px 0 30px 0;
   .search-field {
+    margin-right: 10px;
+    padding: 15px 10px;
     border-radius: 25px;
-    padding: 20px;
-    margin-bottom: 30px;;
-    width: 200px;
-    height: 15px;
+    min-width: 240px;
+    width: 32vh;
     &:focus {
       outline: 0;
     }
   }
   .send-btn {
+    font-size: 10px;
+    padding: 17px 10px;
     background-color: transparent;
     border-radius: 50%;
     color: white;
-    padding: 24px 10px;
-    text-decoration: none;
-    margin: 4px 2px;
     cursor: pointer;
     &:focus {
       outline: 0;

@@ -3,6 +3,7 @@ import * as api from "../../api/jsonPlaceholder.js";
 import { v4 as uuidv4 } from "uuid";
 import ChatForm from "../chatForm/ChatForm.js";
 import MessageBox from "../messageBox/MessageBox.js";
+import "./chat.scss";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
@@ -45,8 +46,10 @@ const Chat = () => {
 
   return (
     <>
-      <MessageBox messages={messages} />
-      <ChatForm onFormSubmit={onFormSubmit} />
+      <main className="chat-wrapper">
+        <MessageBox messages={messages} />
+        <ChatForm onFormSubmit={onFormSubmit} />
+      </main>
     </>
   );
 };
