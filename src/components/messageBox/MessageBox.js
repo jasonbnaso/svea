@@ -1,4 +1,5 @@
 import React from "react";
+import otherUser from "../../imgs/otherUser.jpg";
 import user from "../../imgs/user.jpg";
 import "./messageBox.scss";
 
@@ -12,7 +13,11 @@ const MessageBox = ({ messages }) => {
             key={message.id}
           >
             <div className="img-text-wrapper">
-              <img src={user} className="user-image" alt="Profile" />
+              <img
+                src={message.isMine ? user : otherUser}
+                className="user-image"
+                alt="Profile"
+              />
               <p>{message.text}</p>
             </div>
             <div className="time">{message.timestamp}</div>
